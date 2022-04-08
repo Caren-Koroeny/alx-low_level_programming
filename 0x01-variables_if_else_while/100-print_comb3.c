@@ -10,7 +10,8 @@
 int main(void)
 {
 	int n = 48;
-	int m = 48;
+	int m = 49;
+	int c = 49;
 
 	while (n < 58)
 	{
@@ -18,14 +19,15 @@ int main(void)
 		{
 			putchar(n);
 			putchar(m);
-			if ((n != 57) || (m != 57))
+			if ((n != 56) || (m != 57))
 			{
 				putchar(44);
 				putchar(32);
 			}
 			m++;
 		}
-		m = 48;
+		c++;
+		m = c;
 		n++;
 	}
 	putchar('\n');

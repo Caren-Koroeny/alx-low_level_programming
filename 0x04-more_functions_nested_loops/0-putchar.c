@@ -5,7 +5,7 @@
  * @letter: the character to be tracked
  * Return: 1 if c is uppercase, 0 otherwise
  */
-int _isupper(int alphabet)
+int _isupper(int letter)
 {
-	return(alphabet >= 'A' && alphabet <= 'Z');
+	return (letter >= 'A' && letter <= 'Z');
 }

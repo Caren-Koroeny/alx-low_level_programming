@@ -1,1 +1,1 @@
-Introduction to Static Libraries
+This repo is about static libraries in C.

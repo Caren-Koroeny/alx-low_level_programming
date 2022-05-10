@@ -1,5 +1,7 @@
-#This directory contains functions that do the following:
+#This directory contains functions that do the following: 
+
 -0-malloc_checked.c is a function that allocates memory using malloc.
+
 
 -1-string_nconcat.c is a function that concatenates two strings.
 
@@ -11,4 +13,4 @@
 
 -101-mul.c is a program that multiplies two positive numbers.
 
-##**main.h** is the for all the function prototype.
+#main.h is the for all the function prototype.

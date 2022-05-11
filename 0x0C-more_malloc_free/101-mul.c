@@ -1,147 +1,121 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * _print - moves a string one place to the left and prints the string
- * @str: string to move
- * @l: size of string
- *
- * Return: void
+ * _atoi - convert ascii to integer
+ * @s: string to convert
+ * Return: corresponding integer
  */
-void _print(char *str, int l)
-{
-	int i, j;
 
-	i = j = 0;
-	while (i < l)
+int _atoi(char *s)
+{
+	int i = 0;
+	int num = 0;
+	int sign = 1;
+
+	while (s[i] != 0)
 	{
-		if (str[i] != '0')
-			j = 1;
-		if (j || i == l - 1)
-			_putchar(str[i]);
+		if (s[i] == '-')
+		{
+			sign = sign * -1;
+			i++;
+			continue;
+		}
+		num = (num * 10) + (s[i] - '0');
 		i++;
 	}
-
-	_putchar('\n');
-	free(str);
+	return (num * sign);
 }
 
 /**
- * mul - multiplies a char with a string and places the answer into dest
- * @n: char to multiply
- * @num: string to multiply
- * @num_index: last non NULL index of num
- * @dest: destination of multiplication
- * @dest_index: highest index to start addition
- *
- * Return: pointer to dest, or NULL on failure
+ * _itoa - integer to ascii
+ * @n: integer to convert
+ * @i: divisor
+ * Return: pointer to string
  */
-char *mul(char n, char *num, int num_index, char *dest, int dest_index)
+char *_itoa(int n, int i)
 {
-	int j, k, mul, mulrem, add, addrem;
+	int count = 0;
+	int sign;
+	int j = 0;
+	char *ptr;
 
-	mulrem = addrem = 0;
-	for (j = num_index, k = dest_index; j >= 0; j--, k--)
+	if (n < 0)
 	{
-		mul = (n - '0') * (num[j] - '0') + mulrem;
-		mulrem = mul / 10;
-		add = (dest[k] - '0') + (mul % 10) + addrem;
-		addrem = add / 10;
-		dest[k] = add % 10 + '0';
+		n = n * -1;
+		sign = -1;
 	}
-	for (addrem += mulrem; k >= 0 && addrem; k--)
-	{
-		add = (dest[k] - '0') + addrem;
-		addrem = add / 10;
-		dest[k] = add % 10 + '0';
-	}
-	if (addrem)
-	{
-		return (NULL);
-	}
-	return (dest);
-}
-/**
- * check_for_digits - checks the arguments to ensure they are digits
- * @av: pointer to arguments
- *
- * Return: 0 if digits, 1 if not
- */
-int check_for_digits(char **av)
-{
-	int i, j;
 
-	for (i = 1; i < 3; i++)
+	while (i <= n)
 	{
-		for (j = 0; av[i][j]; j++)
+		i = i * 10;
+		count++;
+	}
+	if (sign == -1)
+		count++;
+
+	ptr = malloc((count + 1) * sizeof(char));
+	i = i / 10;
+
+	while (j < count)
+	{
+		if (sign == -1)
 		{
-			if (av[i][j] < '0' || av[i][j] > '9')
-				return (1);
+			ptr[0] = '-';
+			j++;
+			sign = 1;
+			continue;
 		}
+
+		ptr[j] = (n / i) + '0';
+		n = n % i;
+		i = i / 10;
+		j++;
 	}
-	return (0);
+	ptr[j] = '\0';
+	return (ptr);
 }
-
 /**
- * init - initializes a string
- * @str: sting to initialize
- * @l: length of strinf
- *
- * Return: void
- */
-void init(char *str, int l)
-{
-	int i;
-
-	for (i = 0; i < l; i++)
-		str[i] = '0';
-	str[i] = '\0';
-}
-
-/**
- * main - multiply two numbers
- * @argc: number of arguments
- * @argv: argument vector
- *
- * Return: zero, or exit status of 98 if failure
+ * main - multiplies tow positive numbers
+ * @argc: arg count
+ * @argv: arg vector
+ * Return: 0, Always Success
  */
 int main(int argc, char *argv[])
 {
-	int l1, l2, ln, ti, i;
-	char *a;
-	char *t;
-	char e[] = "Error\n";
+	int num1, num2, mul, i, j, k;
+	char err[] = "Error";
+	char *ans;
 
-	if (argc != 3 || check_for_digits(argv))
+	if (argc != 3)
 	{
-		for (ti = 0; e[ti]; ti++)
-			_putchar(e[ti]);
+		for (k = 0; err[k] != '\0'; k++)
+			_putchar(err[k]);
+
+		_putchar('\n');
 		exit(98);
 	}
-	for (l1 = 0; argv[1][l1]; l1++)
-		;
-	for (l2 = 0; argv[2][l2]; l2++)
-		;
-	ln = l1 + l2 + 1;
-	a = malloc(ln * sizeof(char));
-	if (a == NULL)
+	for (i = 1; i < argc; i++)
 	{
-		for (ti = 0; e[ti]; ti++)
-			_putchar(e[ti]);
-		exit(98);
-	}
-	init(a, ln - 1);
-	for (ti = l2 - 1, i = 0; ti >= 0; ti--, i++)
-	{
-		t = mul(argv[2][ti], argv[1], l1 - 1, a, (ln - 2) - i);
-		if (t == NULL)
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			for (ti = 0; e[ti]; ti++)
-				_putchar(e[ti]);
-			free(a);
-			exit(98);
+			if ((argv[i][j] < 48 || argv[i][j] > 57) && argv[i][j] != '-')
+			{
+				for (k = 0; err[k] != '\0'; k++)
+					_putchar(err[k]);
+
+				_putchar('\n');
+				exit(98);
+			}
 		}
 	}
-	_print(a, ln - 1);
+	num1 = _atoi(argv[1]);
+	num2 = _atoi(argv[2]);
+	mul = num1 * num2;
+
+	ans = _itoa(mul, 1);
+	for (i = 0; ans[i] != '\0'; i++)
+		_putchar(ans[i]);
+
+	_putchar('\n');
 	return (0);
 }

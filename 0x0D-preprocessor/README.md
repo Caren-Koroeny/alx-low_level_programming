@@ -1,13 +1,12 @@
-## C - Preprocessor
+# 0x0E. C - Structures, typedef
+## This directory contains functions that do the following:
 
-## this directory contains functions that do the following:
+dog.h is a header file containing a new type "struct dog".
 
-0-object_like_macro.h is a header file that defines a macro named SIZE as an abbreviation for the token 1024.
+1-init_dog.c initialize a variable of type struct dog.
 
-1-pi.h is a header file that defines a macro named PI as an abbreviation for the token 3.14159265359.
+2-print_dog.c prints a struct dog.
 
-2-main.c is a program that prints the name of the file it was compiled from, followed by a new line.
+4-new_dog.c that creates a new dog.
 
-3-function_like_macro.h is a function-like macro ABS(x) that computes the absolute value of a number x.
-
-4-sum.h is a function-like macro SUM(x, y) that computes the sum of the numbers x and y.
+5-free_dog.c is a function that frees dogs.

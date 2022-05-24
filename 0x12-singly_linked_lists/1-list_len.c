@@ -7,13 +7,13 @@
 
 size_t list_len(const list_t *h)
 {
-    size_t caren;
+	size_t nelem;
 
-    caren = 0;
-    while (h != NULL)
-    {
-        h = h->next;
-        caren++;
-    }
-    return (caren);
+	nelem = 0;
+	while (h != NULL)
+	{
+		h = h->next;
+		nelem++;
+	}
+	return (nelem);
 }

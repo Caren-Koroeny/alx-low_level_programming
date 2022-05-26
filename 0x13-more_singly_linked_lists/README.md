@@ -2,6 +2,10 @@
 
 - In this project, I continued to practice building and using singly linked lists in C.
 
+- **What is linked list**	
+	*) Linked List is `linear` collection of data structure.
+	*) A `record` called `node` contain `data` and `address` of `next node`.
+	*) `Randomly` stored in memory.
 ## Header File file_folder.
 
 - `lists.h`: Header file containing definitions and prototypes for all types and functions written for the project.
@@ -10,4 +14,7 @@
 * **0. Print list**
   * [0-print_listint.c](https://github.com/Caren-Koroeny/alx-low_level_programming/blob/master/0x13-more_singly_linked_lists/0-print_listint.c) :C function that prints all the elements of a `listint_t` linked list.
     * Returns the number of nodes in the `listint_t` list. 
+
+* **1-listint_len.c**
+  * [1-listint_len.c](https://github.com/Caren-Koroeny/alx-low_level_programming/blob/master/0x13-more_singly_linked_lists/1-listint_len.c) :  C function that returns the number of elements in a `listint_t` linked list.
 

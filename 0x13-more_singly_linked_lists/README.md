@@ -40,11 +40,11 @@
 
 * When list has few elements
 
-	* step 1 : create a `new node`. 
+	* `step 1` : create a `new node`. 
 
-	* step 2 : Assign address of `head` to the `next field` of newly created node
+	* `step 2` : Assign address of `head` to the `next field` of newly created node
 
-	* step 3 : Assign the address of `newly created node to head.`
+	* `step 3` : Assign the address of `newly created node to head.`
 	
 **Note**: Here `head` contains the `address of first node.`
 
@@ -55,3 +55,22 @@
 	
 	* Otherwise - returns the `address` of the new element.
 
+* **How to add node in the end of the list**-
+
+	* `case 1`: 
+
+* When list is `empty`.
+	
+	* create a `node` and assign the address of newly created node to the `head`.
+
+	* `Case 2`:
+
+* When list has few elements.
+
+	* `step 1` : create a `new node`.
+ 
+	* `step 2` : `Traverse` the list to reach `last node`
+
+	* `step 3` : `Assign the address` of `newly` created `node` to `address` field of `last node`.
+	
+**Note**: Here `head` contains the `address of first node.`

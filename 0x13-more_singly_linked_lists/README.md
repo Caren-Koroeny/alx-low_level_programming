@@ -40,10 +40,18 @@
 
 * When list has few elements
 
-	* step 1 : create a new node 
+	* step 1 : create a `new node`. 
 
-	* step 2 : Assign address of head to the next field of newly created node
+	* step 2 : Assign address of `head` to the `next field` of newly created node
 
-	* step 3 : Assign the address of newly created node to head
+	* step 3 : Assign the address of `newly created node to head.`
 	
 **Note**: Here `head` contains the `address of first node.`
+
+* **3-add_nodeint_end.c**
+  * [3-add_nodeint_end.c](https://github.com/Caren-Koroeny/alx-low_level_programming/blob/master/0x13-more_singly_linked_lists/3-add_nodeint_end.c) :C function that adds a new node at the end of a `listint_t` linked list.
+
+	* If the function fails - returns `NULL.`
+	
+	* Otherwise - returns the `address` of the new element.
+

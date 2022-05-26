@@ -4,7 +4,9 @@
 
 - **What is linked list**	
 	*) Linked List is `linear` collection of data structure.
+
 	*) A `record` called `node` contain `data` and `address` of `next node`.
+
 	*) `Randomly` stored in memory.
 ## Header File file_folder.
 

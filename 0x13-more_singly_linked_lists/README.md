@@ -74,3 +74,6 @@
 	* `step 3` : `Assign the address` of `newly` created `node` to `address` field of `last node`.
 	
 **Note**: Here `head` contains the `address of first node.`
+
+* **4-free_listint.c**
+  * [4-free_listint.c](https://github.com/Caren-Koroeny/alx-low_level_programming/blob/master/0x13-more_singly_linked_lists/4-free_listint.c) : C function that frees a `listint_t` linked list.

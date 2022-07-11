@@ -1,9 +1,7 @@
-# 0x18. C - Dynamic librarie
+# C - Dynamic libraries
 
-- By Julien Barbier
+- In this project, learned about using dynamic libraries in C, including how to create them and how to use them with `$LD_LIBRARY_PATH`, `nm`, `ldd`, `ldconfig`.
 
-## Resources
+# Tasks:page_with_curl:
 
-- Watch and Read:
-
-	- [What is difference between Dynamic and Static library (Static and Dynamic linking)](https://www.youtube.com/watch?v=eW5he5uFBNM)
+ ## 0. A library is not a luxury but one of the necessities of life
